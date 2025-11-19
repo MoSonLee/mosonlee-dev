@@ -13,7 +13,7 @@ const Resume = () => {
       team: 'iOS 1명, AOS 1명, Server 1명, Design 1명, 기획 2명',
       description: '강원대학교 연계 스타트업 인턴으로 iOS 1인 개발 진행, 인턴 종료 후 프리랜서로 출시 및 업데이트 작업을 진행한 어플리케이션. 경조사 및 경조사비를 관리할 수 있는 서비스(iOS 14.0 이상 대응)',
       features: [
-        '경조사 일정 생성, 공유',
+        '경조사 일정 CRUD',
         '전화번호 기반 지인 일정 리마인드 푸시 알림 서비스',
         '경조사비 생성 및 인증 기능'
       ],
@@ -197,18 +197,25 @@ const Resume = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          서비스를 만드는 모바일 개발자
+          비즈니스와 사용자를 잇는 iOS 개발자
         </motion.p>
         <motion.div
           className="contact-info"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
+          style={{ pointerEvents: 'auto' }}
         >
-          <a href="mailto:ronlee6235@gmail.com" target="_blank" rel="noopener noreferrer">📧 ronlee6235@gmail.com</a>
-          <a href="https://github.com/MoSonLee" target="_blank" rel="noopener noreferrer">📱 GitHub</a>
-          <a href="https://s2ung.tistory.com/" target="_blank" rel="noopener noreferrer">✏️ Blog</a>
-          <a href="https://www.linkedin.com/in/seunghoo-lee-496b81265/" target="_blank" rel="noopener noreferrer">🌼 LinkedIn</a>
+          <div className="contact-pill-row">
+            <div className="contact-pill email-pill">📧 ronlee6235@gmail.com</div>
+            <div className="contact-pill phone-pill">📱 010-9953-6235</div>
+            <div className="contact-pill univ-pill">🎓 강원대 컴퓨터정보통신공학전공</div>
+          </div>
+          <div className="contact-link-row">
+            <a className="contact-link-pill" href="https://github.com/MoSonLee" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>📀 GitHub</a>
+            <a className="contact-link-pill" href="https://s2ung.tistory.com/" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>✏️ Blog</a>
+            <a className="contact-link-pill" href="https://www.linkedin.com/in/seunghoo-lee-496b81265/" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>💼 LinkedIn</a>
+          </div>
         </motion.div>
         <motion.p
           className="update-date"
@@ -226,7 +233,7 @@ const Resume = () => {
         variants={cardVariants}
         whileHover="hover"
       >
-        <h2 className="card-title">🌄 Introduce</h2>
+        <h2 className="card-title">👋 Introduce</h2>
         <div className="introduce-grid">
           <motion.div
             className="introduce-item"
@@ -234,8 +241,8 @@ const Resume = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <div className="introduce-icon" style={{ background: 'linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%)' }}>
-              <span>↑</span>
+            <div className="introduce-icon" style={{ background: 'linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span role="img" aria-label="성장">📈</span>
             </div>
             <h3>기술적으로 더 발전하기 위한 노력</h3>
             <ul>
@@ -251,8 +258,8 @@ const Resume = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
           >
-            <div className="introduce-icon" style={{ background: 'linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%)' }}>
-              <span>↑</span>
+            <div className="introduce-icon" style={{ background: 'linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span role="img" aria-label="융통성">💡</span>
             </div>
             <h3>능동적이고 융통성 있는 자세</h3>
             <ul>
@@ -267,8 +274,8 @@ const Resume = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0 }}
           >
-            <div className="introduce-icon" style={{ background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)' }}>
-              <span>↑</span>
+            <div className="introduce-icon" style={{ background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span role="img" aria-label="UIUX">🎨</span>
             </div>
             <h3>유저에게 더 나은 UI/UX를 위한 고민</h3>
             <ul>
@@ -283,8 +290,8 @@ const Resume = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1 }}
           >
-            <div className="introduce-icon" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
-              <span>↑</span>
+            <div className="introduce-icon" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span role="img" aria-label="서비스경험">🌐</span>
             </div>
             <h3>다양한 서비스 도메인 및 대규모 도입 경험</h3>
             <ul>
@@ -314,6 +321,7 @@ const Resume = () => {
                 <img src="/images/knowwhere-soft-logo.png" alt="노웨어소프트 로고" className="company-logo-large" />
                 <h3 className="company-title">노웨어소프트 – 모바일엔지니어 (정규직) [B2G · B2B]</h3>
                 <ul className="company-info">
+                  <li>모바일 엔지니어 정규직(2025.05 ~ 재직중)</li>
                   <li>
                     <a 
                       href="https://meercatch.com/main" 
@@ -324,7 +332,6 @@ const Resume = () => {
                       Service Link
                     </a>
                   </li>
-                  <li>모바일 엔지니어 정규직(2025.05 ~ 재직중)</li>
                 </ul>
               </div>
               <div className="experience-right-panel">
@@ -351,6 +358,7 @@ const Resume = () => {
                 <img src="/images/flybit-logo.png" alt="FLYBIT 로고" className="company-logo-large" />
                 <h3 className="company-title">FLYBIT – 한국 디지털 거래소 (정규직) [B2C·금융]</h3>
                 <ul className="company-info">
+                  <li>iOS 개발 정규직(2024.06-2025.01)</li>
                   <li>
                     <a 
                       href="https://apps.apple.com/kr/app/flybit/id1570368673" 
@@ -361,7 +369,6 @@ const Resume = () => {
                       App Store
                     </a>
                   </li>
-                  <li>iOS 개발 정규직(2024.06-2025.01)</li>
                 </ul>
               </div>
               <div className="experience-right-panel">
@@ -392,6 +399,7 @@ const Resume = () => {
                 <img src="/images/allida-logo.png" alt="모두 알리다 로고" className="company-logo-large" />
                 <h3 className="company-title">모두 알리다 – 주식회사 아이들 (인턴, 프리랜서) [B2C]</h3>
                 <ul className="company-info">
+                  <li>iOS 개발 (인턴, 프리랜서)(2022.12-2024.02)</li>
                   <li>
                     <a 
                       href="https://apps.apple.com/kr/app/%EB%AA%A8%EB%91%90%EC%95%8C%EB%A6%AC%EB%8B%A4-%EA%B0%80%EC%9E%A5-%ED%8E%B8%EB%A6%AC%ED%95%98%EA%B3%A0-%EC%95%88%EC%A0%84%ED%95%9C-%EC%9D%BC%EC%A0%95-%EA%B3%B5%EC%9C%A0-%EC%83%9D%ED%99%9C/id6447755601" 
@@ -402,7 +410,6 @@ const Resume = () => {
                       App Store
                     </a>
                   </li>
-                  <li>iOS 개발 (인턴, 프리랜서)(2022.12-2024.02)</li>
                 </ul>
               </div>
               <div className="experience-right-panel">
@@ -410,7 +417,7 @@ const Resume = () => {
                 <ul className="experience-details">
                   <li>경조사 및 경조사비를 관리 플랫폼</li>
                   <li>iOS 14.0 이상 대응</li>
-                  <li>경조사 일정 생성, 공유</li>
+                  <li>경조사 일정 CRUD</li>
                   <li>전화번호 기반 지인 일정 리마인드 푸시 알림 서비스</li>
                   <li>경조사비 생성 및 인증 기능</li>
                   <li>기획부터 참여한 개발</li>
@@ -427,7 +434,7 @@ const Resume = () => {
         variants={cardVariants}
         whileHover="hover"
       >
-        <h2 className="card-title">📅 Timeline</h2>
+        <h2 className="card-title">📆 Timeline</h2>
         <div className="timeline-list">
           <motion.div
             className="timeline-item"
@@ -515,7 +522,7 @@ const Resume = () => {
         variants={cardVariants}
         whileHover="hover"
       >
-        <h2 className="card-title">🔥 Interesting About</h2>
+        <h2 className="card-title">✨ Interesting About</h2>
         <div className="interesting-grid">
           <motion.div
             className="interesting-item"
@@ -556,7 +563,31 @@ const Resume = () => {
         <h2 className="card-title">💻 Dev Experience</h2>
         <div className="dev-experience-content">
           <div className="diagram-container">
-            <img src="/images/dev-process-diagram.png" alt="개발 프로세스 다이어그램" className="diagram-image" />
+            {/* 이미지 대신 SVG, HTML+CSS로 흐름도 대체 */}
+            <div className="dev-flow-diagram">
+              <div className="dev-flow-top">
+                <div className="dev-flow-box">기획</div>
+                <span className="dev-flow-arrow">→</span>
+                <div className="dev-flow-box">디자인</div>
+                <span className="dev-flow-arrow">→</span>
+                <div className="dev-flow-box">서버개발</div>
+                <span className="dev-flow-arrow">→</span>
+                <div className="dev-flow-box">클라이언트개발</div>
+                <span className="dev-flow-arrow">→</span>
+                <div className="dev-flow-box">스모크테스트</div>
+              </div>
+              <div className="dev-flow-bottom">
+                <div className="dev-flow-box">세니티</div>
+                <span className="dev-flow-arrow">→</span>
+                <div className="dev-flow-box">배포열차출발</div>
+                <span className="dev-flow-arrow">→</span>
+                <div className="dev-flow-box">QA기간</div>
+                <span className="dev-flow-arrow">→</span>
+                <div className="dev-flow-box">출시</div>
+                <span className="dev-flow-arrow">→</span>
+                <div className="dev-flow-end-arrow" />
+              </div>
+            </div>
           </div>
           <ul>
             <li>기획 → 디자인 → 서버 → 클라이언트 → QA → 출시까지 <strong>전체 사이클 참여 경험</strong></li>
@@ -575,23 +606,36 @@ const Resume = () => {
       >
         <h2 className="card-title">⚡ Main Ability</h2>
         <div className="ability-content">
-          <div className="ability-layout">
-            <div className="ability-diagram-section">
-              <img src="/images/tech-stack-diagram.png" alt="기술 스택 다이어그램" className="diagram-image" />
-            </div>
-            <div className="ability-list-section">
-              <h4 className="ability-list-title">📌 ETC</h4>
-              <ul className="ability-list">
-                <li>ChatGPT 이용한 개발</li>
-                <li>앱내 DB 사용 CRUD 구현</li>
-                <li>Firebase 모니터링</li>
-                <li>소셜 로그인 기능 구현(카카오, 구글, 애플)</li>
-                <li>다크모드 대응</li>
-                <li>아이패드 멀티스크린 대응</li>
-                <li>현지화(Localization) 지원</li>
-                <li>커스텀 폰트 지원</li>
-                <li>Safari Extension / Network Extension(DNS) 기반 iOS 시스템 레벨 기능 연동</li>
-              </ul>
+          <div className="ability-section-bg">
+            <div className="ability-layout-row">
+              <div className="ability-bubblemap-wrapper">
+                <div className="ability-diagram-section">
+                  {/* 이미지 대신 HTML 반응형 원형 버블맵 */}
+                  <div className="ability-bubble-map">
+                    <div className="ability-bubble">웹 소켓<br/>(실시간)</div>
+                    <div className="ability-bubble">모듈화<br/>(Tuist)</div>
+                    <div className="ability-bubble">웹 브릿지 연결<br/>(웹과 핑퐁)</div>
+                    <div className="ability-bubble">CI/CD<br/>(Xcode Cloud)</div>
+                    <div className="ability-bubble">인증 세션 관리</div>
+                  </div>
+                </div>
+              </div>
+              <div className="ability-list-wrapper">
+                <div className="ability-list-section">
+                  <h4 className="ability-list-title">📌 ETC</h4>
+                  <ul className="ability-list">
+                    <li>ChatGPT 이용한 개발</li>
+                    <li>앱내 DB 사용 CRUD 구현</li>
+                    <li>Firebase 모니터링</li>
+                    <li>소셜 로그인 기능 구현(카카오, 구글, 애플)</li>
+                    <li>다크모드 대응</li>
+                    <li>아이패드 멀티스크린 대응</li>
+                    <li>현지화(Localization) 지원</li>
+                    <li>커스텀 폰트 지원</li>
+                    <li>Safari Extension / Network Extension(DNS) 기반 iOS 시스템 레벨 기능 연동</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
