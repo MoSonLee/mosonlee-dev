@@ -342,7 +342,7 @@ const Resume = () => {
                   <li>CoreML 기반 YOLO 모델 연동 및 전처리, 후처리 로직 설계</li>
                   <li>Vision 기반 이미지 → 텍스트 추출(OCR) 파이프라인 구성</li>
                   <li>SwiftUI + Clean Architecture 기반 신규 화면 및 로직 개발</li>
-                  <li>세종시 교육청 iPad 10,000대 도입 확정 프로젝트 담당</li>
+                  <li>세종시 교육청 iPad 10,000대 도입 프로젝트 담당</li>
                 </ul>
               </div>
             </div>
