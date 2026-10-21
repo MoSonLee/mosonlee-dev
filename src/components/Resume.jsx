@@ -223,7 +223,7 @@ const Resume = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          최근 업데이트일 : 2025.11.18
+          최근 업데이트일 : 2026.10.20 
         </motion.p>
       </motion.div>
 
@@ -324,7 +324,7 @@ const Resume = () => {
                   <li>모바일 엔지니어 정규직(2025.05 ~ 재직중)</li>
                   <li>
                     <a 
-                      href="https://meercatch.com/main" 
+                      href="https://www.meercatch.com/html/main.html" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="company-link-btn"
